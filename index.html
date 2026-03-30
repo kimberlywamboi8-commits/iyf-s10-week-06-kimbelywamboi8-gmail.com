@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Live conditions</p>
+      <h1>Weather that feels readable at a glance.</h1>
+      <p class="hero-copy">
+        Search any city to see current conditions, temperature swing, and a quick forecast.
+      </p>
+
+      <form class="search-form" id="search-form">
+        <label class="sr-only" for="city-input">Search city</label>
+        <input id="city-input" name="city" type="text" placeholder="Search city or town" autocomplete="off" required>
+        <button type="submit">Check weather</button>
+      </form>
+
+      <p class="status" id="status">Try "San Diego", "Tokyo", or "Paris".</p>
+    </section>
+
+    <section class="weather-card" aria-live="polite">
+      <div class="current-header">
+        <div>
+          <p class="location" id="location">Los Angeles, United States</p>
+          <p class="date" id="date">Loading current forecast...</p>
+        </div>
+        <div class="badge" id="condition-code">Clear</div>
+      </div>
+
+      <div class="current-body">
+        <div class="temperature-block">
+          <p class="temperature" id="temperature">--</p>
+          <p class="condition" id="condition-text">Waiting for weather data</p>
+        </div>
+
+        <div class="metrics">
+          <article>
+            <span>Feels like</span>
+            <strong id="feels-like">--</strong>
+          </article>
+          <article>
+            <span>Wind</span>
+            <strong id="wind">--</strong>
+          </article>
+          <article>
+            <span>Humidity</span>
+            <strong id="humidity">--</strong>
+          </article>
+          <article>
+            <span>High / Low</span>
+            <strong id="range">--</strong>
+          </article>
+        </div>
+      </div>
+
+      <div class="forecast" id="forecast"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
